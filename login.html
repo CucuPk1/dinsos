@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="index.css">
+    <title>Login boy</title>
+    <script>
+        // Cek apakah pengguna telah masuk atau memiliki token autentikasi.
+        // Jika tidak, arahkan mereka ke halaman login.
+        if (!localStorage.getItem("token")) {
+            window.location.href = "login.html"; // Ganti dengan path ke halaman login Anda.
+        }
+    </script>
+
+</head>
+
+<body>
+    <section class="home">
+        <video class="video-slide active" src="assets/yo.mp4" autoplay muted loop></video>
+
+        <div class="form-kotax">
+            <div class="form-value">
+                <form id="login-form" action="#">
+                    <h2>UNION</h2>
+                    <div class="inputbox">
+                        <ion-icon name="mail-outline"></ion-icon>
+                        <input type="email" id="email" required>
+                        <label for="">Email</label>
+                    </div>
+                    <div class="inputbox">
+                        <ion-icon name="lock-closed-outline"></ion-icon>
+                        <input type="password" id="password" required>
+                        <label for="">Password</label>
+                    </div>
+                    <div class="forget">
+                        <label for=""><input type="checkbox">Remember Me</label>
+                    </div>
+                    <button type="submit">Log in</button>
+                    <div class="register">
+                        <p>Don't have an account? <a href="#">Register</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                document.getElementById("login-form").addEventListener("submit", function(event) {
+                    event.preventDefault(); // Menghentikan pengiriman formulir ke server
+
+                    // Ambil nilai dari input email dan password
+                    var email = document.getElementById("email").value;
+                    var password = document.getElementById("password").value;
+
+                    // Periksa apakah email dan password sesuai dengan yang diharapkan
+                    if (email === "contoh@email.com" && password === "123") {
+                        // Jika benar, arahkan ke halaman dashboard.html
+                        window.location.href = "dashboardetc/index.html";
+                    } else {
+                        // Jika salah, tampilkan pesan kesalahan
+                        alert("Email atau kata sandi salah. Coba lagi.");
+                    }
+                });
+            });
+        </script>
+    </section>
+</body>
+
+</html>
