@@ -1,2 +1,2 @@
-# dn_aidit
+# dinsos
 try using next vercel
